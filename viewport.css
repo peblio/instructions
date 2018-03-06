@@ -1,0 +1,16 @@
+@media(min-width: 640px){
+
+  .shape,
+  h3,
+  img{
+    opacity:  0;
+    transition: opacity 1s ease;
+  }
+
+  .in-viewport .shape,
+  .in-viewport h3,
+  .in-viewport img
+  {
+  opacity:  1;
+  }
+}
