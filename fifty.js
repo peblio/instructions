@@ -67,10 +67,10 @@ inView('.section')
 inView.threshold(0.2);
 
 //loop through the sections and then the elements in the sections to have them fade in at different times
-const sections= document.querySelectAll('.section')
+const sections= document.querySelectorAll('.section')
 sections.forEach((section,index)=>{
-  const containers= section.querySelectAll('.container');
-  const shapes= section.querySelectAll('.shape');
+  const containers= section.querySelectorAll('.container');
+  const shapes= section.querySelectorAll('.shape');
 
   containers.forEach((container,index)=>{
     const delay= index*100
@@ -78,7 +78,7 @@ sections.forEach((section,index)=>{
   })
 
     shapes.forEach((shape,index)=>{
-    const delay= (container.length+ index)*100
+    const delay= (containers.length+ index)*100
     shape.style.transition= delay+'ms'
   })
 })
@@ -106,3 +106,20 @@ function openCity(evt, cityName) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+
+
+// here we grab all our the .circles from the html
+const circles = document.querySelectorAll('.circle')
+
+// circles returns us an array so we need to loop through it
+// inside of the forEach we get access to each individual element
+// along with its index
+circles.forEach((circle, index) => {
+  // in here we get access to each one as 'circle'
+  circle.animate([{transform: 'scale(1)'}, {transform: 'scale(1.2)'}, {transform: 'scale(1)'}], {
+    // here we use the index to create a staggered animation delay
+    delay: 300 * index,
+    duration: 3000,
+    iterations: Infinity
+  })
+})
