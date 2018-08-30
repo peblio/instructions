@@ -215,7 +215,7 @@ box-shadow: 3px 3px 5px #888888;
 
 .instruction{
   font-family: 'LunchType', sans-serif;
-  font-size: 3vw;
+  font-size: 4vw;
   line-height: 1.2;
   text-align: center;
 }
@@ -479,4 +479,9 @@ box-shadow: 3px 3px 5px #888888;
 .circle:nth-of-type(8) {
   left: 80%;
   top: 80%;
+}
+
+
+.full-width{
+  width:100% !important;
 }
